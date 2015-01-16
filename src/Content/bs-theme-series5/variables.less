@@ -1,0 +1,65 @@
+@import "..\bootstrap\variables.less";
+
+// Grays
+// -------------------------
+@white:                         #fff;
+
+
+// Typography
+// -------------------------
+@font-size-base:                13px;
+
+
+// Components
+// -------------------------
+
+@padding-base-vertical:          3px;
+@padding-base-horizontal:        8px;
+
+@padding-large-vertical:         5px;
+@padding-large-horizontal:       11px;
+
+@padding-small-vertical:         1px;
+@padding-small-horizontal:       5px;
+
+@padding-xs-vertical:            0px;
+@padding-xs-horizontal:          5px;
+
+@border-radius-base:             3px;
+@border-radius-large:            5px;
+@border-radius-small:            3px;
+
+
+// Navs
+// -------------------------
+@nav-link-padding:                  2px 15px;
+
+
+// Forms
+// -------------------------
+@input-group-addon-bg:              lighten(#000, 96%);
+
+
+// Modals
+// -------------------------
+@modal-title-padding:               10px;
+@modal-backdrop-bg:                 rgba(0, 0, 0, 0.83);
+
+// Tables
+// -------------------------
+
+@table-cell-padding:                 6px;
+@table-condensed-cell-padding:       3px;
+
+
+// Z-index master list
+// increasing z-index of tooltips is best of bad situation; we are having to do this to overcome a limitation of angular-ui tooltips:
+// - tooltips on child element of an input-group must be configured to specify a container for it's popup which is an ancestor of 
+//   the input-group (this is a requirement from bootstrap)
+// - angular-ui only allows to specify as a container body
+// - when the input-group for which a tooltip is required appears in a modal, then body is in layer below the modal. This means
+//   when the tooltips appears for the input-group sitting in the modal, the tooltip popup appears underneath the modal backdrop
+// - the right thing to do would be if angular-ui supported being able to specify the modal as it's container (rather than body);
+//   however this looks like it will never happen (there have been long discussions on github about the issue and the answer was it
+//   is not going to be supported)
+@zindex-tooltip:                      (@zindex-modal + 1);

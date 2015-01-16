@@ -1,0 +1,42 @@
+@import "..\bootstrap\variables.less";
+@import "..\bootstrap\mixins.less";
+
+@condensed-gutter-width:        10px;
+@condensed-gutter-width-half:   @condensed-gutter-width / 2;
+
+.row-condensed {
+    .make-row(@condensed-gutter-width);
+    > [class*="col-"] {
+        padding-left:  @condensed-gutter-width-half;
+        padding-right: @condensed-gutter-width-half;
+    }
+}
+
+.form-group.row-condensed {
+    margin-left: -@condensed-gutter-width-half;
+    margin-right: -@condensed-gutter-width-half;
+}
+
+.form-horizontal-condensed .form-group {
+    margin-left: -@condensed-gutter-width-half;
+    margin-right: -@condensed-gutter-width-half;
+    > [class*="col-"] {
+        padding-left:  @condensed-gutter-width-half;
+        padding-right: @condensed-gutter-width-half;
+    }
+}
+
+.panel-condensed {
+    > .panel-heading, .panel-body, .panel-footer {
+        padding: @condensed-gutter-width-half;
+    }
+    > .list-group > .list-group-item {
+        padding: @condensed-gutter-width-half;
+    }
+}
+
+.list-group-condensed {
+    > .list-group-item {
+        padding: @condensed-gutter-width-half;
+    }
+}

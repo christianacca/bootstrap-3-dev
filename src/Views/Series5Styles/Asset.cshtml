@@ -1,0 +1,194 @@
+﻿<section>
+    <div id="entityUi">
+        <div class="row row-condensed sr-only">
+            <div class="col-sm-9">
+                <h2 class="page-title">Asset Details</h2>
+            </div>
+            <div class="col-sm-3">
+                <span id="icIcon" class="pull-right glyphicon glyphicon-remove-sign"></span>
+            </div>
+        </div>
+        <div class="row row-condensed">
+            <div class="col-sm-6">
+                <div id="btgState" class="pull-left">
+                    <button id="btEdit" class="btn btn-default ram-btn-shout">Edit</button>
+                    <button id="btSavePending" class="btn btn-default ram-btn-shout" disabled="disabled">Save (Pending)</button>
+                    <button id="btSaveLive" class="btn btn-default ram-btn-shout" disabled="disabled">Save (Live)</button>
+                    <button id="btCancel" class="btn btn-default ram-btn-shout" disabled="disabled">Cancel</button>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                Icons
+            </div>
+        </div>
+        <div class="row row-condensed">
+            <div class="col-sm-9">
+                <div id="fsAssetHeader" class="panel panel-condensed ram-panel-default fieldgroupbox">
+                    <div class="panel-body form-horizontal">
+                        <div class="row row-condensed">
+                            <div class="col-sm-6">
+                                <div id="txReferenceContainer" class="form-group form-group-sm row-condensed">
+                                    <label for="txReference" class="col-sm-4 required control-label">Reference</label>
+                                    <div class="controls col-sm-8">
+                                        <div class="input-group input-group-sm">
+                                            <input id="txReference" type="text" class="form-control ng-invalid ng-pristine" placeholder="invalid, pristine" />
+                                            <span class="input-group-addon validationProvider errorProvider tooltipped" data-container="#txReferenceContainer" data-placement="bottom" title="Reference must be greater than '10' characters long">
+                                                <i class="glyphicon glyphicon-exclamation-sign"></i>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-group-sm row-condensed">
+                                    <label for="slCompany" class="col-sm-4 control-label">Company</label>
+                                    <div class="controls col-sm-8">
+                                        <div class="input-group input-group-sm select2-bootstrap-append">
+                                            <select id="slCompany" class="form-control select2 ng-invalid ng-dirty" data-placeholder="invalid, dirty">
+                                                <option></option>
+                                                <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                    <option value="AK">Alaska</option>
+                                                    <option value="HI">Hawaii</option>
+                                                </optgroup>
+                                                <optgroup label="Pacific Time Zone">
+                                                    <option value="CA">California</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="OR">Oregon</option>
+                                                    <option value="WA">Washington</option>
+                                                </optgroup>
+                                            </select>
+                                            <span class="input-group-addon validationProvider errorProvider">
+                                                <i class="glyphicon glyphicon-exclamation-sign"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row row-condensed">
+                            <div class="col-sm-6">
+                                <div class="form-group form-group-sm row-condensed">
+                                    <label for="txReference" class="col-sm-4 control-label">Quantity</label>
+                                    <div class="controls col-sm-8">
+                                        <div class="input-group input-group-sm">
+                                            <input id="txReference" type="number" class="form-control ng-invalid ng-pristine validationWarning" placeholder="invalid (warning), pristine"/>
+                                            <span class="input-group-addon validationProvider warningProvider">
+                                                <i class="glyphicon glyphicon-warning-sign"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-group-sm row-condensed">
+                                    <label for="txCompany" class="col-sm-4 control-label">Purchase Value</label>
+                                    <div class="controls col-sm-8">
+                                        <div class="input-group input-group-sm">
+                                            <input id="txCompany" type="text" class="form-control ng-invalid ng-dirty validationWarning" placeholder="invalid (warning), dirty"/>
+                                            <span class="input-group-addon validationProvider warningProvider">
+                                                <i class="glyphicon glyphicon-warning-sign"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-condensed">
+                            <div class="col-sm-6">
+                                <div class="form-group form-group-sm row-condensed">
+                                    <label for="dPurchaseDate" class="col-sm-4 control-label">Purchase Date</label>
+                                    <div class="controls col-sm-8">
+                                        <div class="input-group input-group-sm date" data-format="dd/MM/yyyy hh:mm:ss">
+                                            <input type="text" class="form-control ng-valid ng-pristine" placeholder="valid, pristine"/>
+                                            <span class="input-group-addon input-group-addon-datetimepicker"><i class="glyphicon glyphicon-calendar"></i></span>
+                                            <span class="input-group-addon validationProvider">
+                                                <i class="glyphicon"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-group-sm row-condensed">
+                                    <label for="dtCreatedDate" class="col-sm-4 control-label">Created Date</label>
+                                    <div class="controls col-sm-8">
+                                        <div class="input-group input-group-sm">
+                                            <input id="dtCreatedDate" type="text" class="form-control ng-invalid ng-dirty" placeholder="invalid, dirty"/>
+                                            <span class="input-group-addon validationProvider errorProvider">
+                                                <i class="glyphicon glyphicon-exclamation-sign"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div id="fsAssetImage" class="panel panel-condensed ram-panel-default fieldgroupbox form-horizontal">
+                    <div class="panel-body">
+                        <div class="row-condensed">
+                            <div class="col-sm-12">
+                                <div class="form-group form-group-sm row-condensed">
+                                    <label for="slCompany2" class="col-sm-4 control-label">Company</label>
+                                    <div class="controls col-sm-8">
+                                        <div class="input-group input-group-sm select2-bootstrap-append">
+                                            <select id="slCompany2" class="form-control select2 ng-invalid validationWarning ng-pristine" data-placeholder="invalid (warning), pristine">
+                                                <option></option>
+                                                <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                    <option value="AK">Alaska</option>
+                                                    <option value="HI">Hawaii</option>
+                                                </optgroup>
+                                                <optgroup label="Pacific Time Zone">
+                                                    <option value="CA">California</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="OR">Oregon</option>
+                                                    <option value="WA">Washington</option>
+                                                </optgroup>
+                                            </select>
+                                            <span class="input-group-addon validationProvider warningProvider">
+                                                <i class="glyphicon glyphicon-warning-sign"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row-condensed">
+                            <div class="col-sm-12">
+                                <div class="form-group form-group-sm row-condensed">
+                                    <label for="slCompany3" class="col-sm-4 control-label">Company</label>
+                                    <div class="controls col-sm-8">
+                                        <div class="input-group input-group-sm select2-bootstrap-append">
+                                            <select id="slCompany3" class="form-control select2 ng-invalid validationWarning ng-dirty" data-placeholder="invalid (warning), dirty">
+                                                <option></option>
+                                                <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                    <option value="AK">Alaska</option>
+                                                    <option value="HI">Hawaii</option>
+                                                </optgroup>
+                                                <optgroup label="Pacific Time Zone">
+                                                    <option value="CA">California</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="OR">Oregon</option>
+                                                    <option value="WA">Washington</option>
+                                                </optgroup>
+                                            </select>
+                                            <span class="input-group-addon validationProvider warningProvider">
+                                                <i class="glyphicon glyphicon-warning-sign"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+﻿.row-condensed {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.row-condensed > [class*="col-"] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.form-group.row-condensed {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.form-horizontal-condensed .form-group {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.form-horizontal-condensed .form-group > [class*="col-"] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.panel-condensed > .panel-heading,
+.panel-condensed .panel-body,
+.panel-condensed .panel-footer {
+  padding: 5px;
+}
+.panel-condensed > .list-group > .list-group-item {
+  padding: 5px;
+}
+.list-group-condensed > .list-group-item {
+  padding: 5px;
+}

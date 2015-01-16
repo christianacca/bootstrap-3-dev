@@ -1,0 +1,47 @@
+﻿<div class="clearfix">
+    <div class="searchResultsToolbar btn-toolbar ram-btn-shout pull-right">
+        <div class="btn-group">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">Report</button>
+                <button type="button" class="btn btn-default dropdown-toggle" 
+                        title="Select report to run">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu reportDropdownMenu" role="menu">
+                    <li><a>Asset Group List</a></li>
+                    <li><a>Asset List</a></li>
+                </ul>
+            </div> 
+            <button id="btExport" class="btn btn-default">Export</button>               
+        </div>
+        <div class="btn-group">
+            <button id="btAdd" class="btn btn-default">Add</button>
+            <button id="btEdit" class="btn btn-default">Edit</button>
+            <button id="btRefresh" class="btn btn-default">Refresh</button>
+        </div>
+    </div>
+    <h2 class="page-title">Asset Search</h2>
+</div>
+<div class="panel ram-panel-default panel-condensed">
+    <div class="panel-body">
+        <div class="clearfix">
+            <div class="browserSearch pull-left">
+                <div class="browserSearch-box input-group pull-left" style="width: 250px" >
+                    <input class="form-control" type="text" placeholder="Browser Search" maxlength="20" />
+                    <span class="input-group-btn">
+                        <button id="icSearch" class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+                <div class="browserSearch-counter pull-left">
+                    <span class="badge badge-inverse">
+                        100
+                        <span>(0)</span>
+                    </span>
+                </div>
+            </div>
+            <span class="ram-icon-menuitem mnuItmForcePointer pull-right"><i class="fa fa-2x fa-cog"></i></span>
+        </div>
+    </div>
+</div>

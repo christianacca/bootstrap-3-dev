@@ -1,0 +1,22 @@
+@import "..\bootstrap\variables.less";
+@import "..\bootstrap\mixins.less";
+
+@grid-gutter-condensed-width: 4px;
+
+.inline-row {
+    .make-row(@grid-gutter-condensed-width);
+    > [class*="col-"] {
+        padding-left:  (@grid-gutter-condensed-width / 2);
+        padding-right: (@grid-gutter-condensed-width / 2);
+    }
+}
+
+.form-group .inline-row {
+    margin-bottom: -5px;
+    > [class*="col-"] {
+        margin-bottom: 5px;
+    }
+}
+
+
+

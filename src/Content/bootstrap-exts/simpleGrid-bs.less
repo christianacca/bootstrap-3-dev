@@ -1,0 +1,50 @@
+@import "../common/simpleGrid.less";
+
+/* make .form-group be a .unit when a child of a .line */
+.line > .form-group:extend(.unit){
+
+}
+.line {
+    > .form-group {
+        padding: 0px;
+        /* cancel out margins when nested inside of form-horizontal */
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+ @media all and (min-width: @screen-xs-min) {
+     // at the width that .unit's become horizontal ensure horizontal whitespace
+     .line {
+        > .form-group {
+            padding: 0 2px;
+            &:first-child {
+              padding-left: 0;
+            }
+            &:last-child {
+              padding-right: 0;
+            }
+        }
+    }
+}
+
+ @media all and (min-width: @screen-xs-min) and (max-width: @screen-xs-max) {
+     // before .form-inline kicks in but after .unit's become horizontal remove the double whitespace
+     // caused by a .form-group within a .form-group
+     .form-group .line.form-inline > .form-group {
+         margin-bottom: 0;
+     }
+ }
+
+ /* override bootstrap to make form-groups act like units that are assigned their own widths */
+@media (min-width: @screen-sm){
+    .line.form-inline {
+        > .form-group > .form-control {
+            width: 100%;
+        }
+        > .form-group >.input-group > .input-group-addon {
+            width: 1%;
+        }
+    }
+}
+

@@ -1,0 +1,112 @@
+﻿<div class="listMaintContainer row row-condensed">
+    <div class="col-lg-9">
+        <div class="clearfix">
+            <div class="btn-group pull-right">
+                <button name="listAdd" class="btn btn-default ram-btn-shout">
+                    <i class="glyphicon glyphicon-plus"></i> Add 
+                </button>
+                <button name="refresh" class="btn btn-default ram-btn-shout">
+                    <i class="glyphicon glyphicon-refresh"></i> Refresh
+                </button>
+            </div>
+            <h2 class="page-title">Lookup Maintenance</h2>
+        
+            <table id="listMaintenanceLookups" class="table table-bordered table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th id="listNameCol" style="width: 46%">Name</th>
+                        <th id="listDisplayCol" style="width: 9%">Display</th>
+                        <th id="listIsObsoleteCol" style="width: 9%">
+                            Obsolete 
+                            <i data-content="The list is linked to at least one field" data-trigger="hover" data-placement="bottom" class="glyphicon glyphicon-question-sign helpPopover"></i>
+                        </th>
+                        <th id="listIsSystemCol" style="width: 9%">
+                            System 
+                            <i data-content="The list is linked to at least one field" data-trigger="hover" data-placement="bottom" class="glyphicon glyphicon-question-sign helpPopover"></i>
+                        </th>
+                        <th id="listIsLinkedCol" style="width: 9%">
+                            Linked 
+                            <i data-content="The list is linked to at least one field" data-trigger="hover" data-placement="bottom" class="glyphicon glyphicon-question-sign helpPopover"></i>
+                        </th>
+                        <th id="listMaintainCol" style="width: 8%">Maintain</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="form-inline">
+                        <td>Building</td>
+                        <td>Desc</td>
+                        <td>
+                            <input type="checkbox" id="list_isObsolete_1" class="ng-pristine ng-valid" disabled="disabled" />
+                        </td>
+                        <td>
+                            <input type="checkbox" ng-model="list.isSystem" disabled="disabled" class="ng-pristine ng-valid" />
+                        </td>
+                        <td>
+                            <span ng-switch-when="true">
+                                <span data-content="Asset.Building; KitchenSink.Building" data-title="Linked Fields:" data-trigger="click" data-placement="bottom" class="badge badge-inverse">2</span>
+                            </span>
+                        </td>
+                        <td style="white-space: nowrap">
+                            <div>  
+                                <button title="Edit List" name="listEdit" type="button" class="btn btn-default btn-sm">
+                                    <i class="glyphicon glyphicon-edit"></i>
+                                </button>
+                                <button title="Delete List" name="listDelete" type="button" class="btn btn-danger btn-sm" disabled="disabled">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </button>
+                                <button title="Open/Close list" name="listToggle" class="btn btn-link btn-sm">
+                                    <i class="glyphicon glyphicon-chevron-down ram-btn-link-icon"></i> 
+                                    <span title="Item count" class="badge badge-inverse">4</span>
+                                </button>
+                            </div> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="editable-wrap editable-text">
+                                <div class="editable-controls form-group">
+                                    <input type="text" id="list_name_1" name="name" class="input-sm form-control editable-input ng-pristine ng-valid" />
+                                </div>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="editable-wrap editable-text">
+                                <div class="editable-controls form-group">
+                                    <input type="text" id="list_name_1" name="name" class="input-sm form-control editable-input ng-pristine ng-valid" />
+                                </div>
+                            </span>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="list_isObsolete_1" class="ng-pristine ng-valid"/>
+                        </td>
+                        <td>
+                            <input type="checkbox" disabled="disabled" class="ng-pristine ng-valid">
+                        </td>
+                        <td>
+                            <span ng-switch-when="true">
+                                <span data-content="Asset.Building; KitchenSink.Building" data-title="Linked Fields:" data-trigger="click" data-placement="bottom" class="badge badge-inverse">2</span>
+                            </span>
+                        </td>
+                        <td style="white-space: nowrap">
+                            <form editable-form="" name="listForm" class="form-buttons form-inline ng-pristine ng-valid">
+                                <button title="Save changes" name="listSave" type="submit" class="btn btn-primary btn-sm">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </button>
+                                <button title="Discard changes" name="listCancel" type="button" class="btn btn-default btn-sm">
+                                    <i class="glyphicon glyphicon-minus-sign"></i>
+                                </button>
+                                <button title="Open/Close list" class="btn btn-link btn-sm" disabled="disabled">
+                                    <i class="glyphicon glyphicon-chevron-down ram-btn-link-icon"></i> 
+                                    <span title="Item count" class="badge badge-inverse">4</span>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+        
+            </table>
+    
+        </div>
+        
+    </div>
+</div>

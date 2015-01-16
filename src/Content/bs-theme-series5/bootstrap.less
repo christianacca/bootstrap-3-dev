@@ -1,0 +1,200 @@
+@import "variables.less";
+@import "..\bootstrap\mixins.less";
+@import "..\bootstrap\bootstrap.less";
+
+/* Custom Widgets  */
+@import "..\select2-bootstrap\select2-bootstrap.less";
+@import "..\bootstrap-datetimepicker\bootstrap-datetimepicker.less";
+
+@import "..\bootstrap-exts/simpleGrid-bs.less";
+@import "..\bootstrap-exts\inlineRow.less";
+@import "..\bootstrap-exts\condensed.less";
+
+
+/*============================*/
+/* Bootstrap fixes            */
+/*============================*/
+
+// Buttons
+// --------------------------------------------------
+
+.btn {
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        //pointer-events: none; is breaking cursor: not-allowed. This is a known issue and may not be addressed by BS
+        //our buttons look a little uninviting so want to make sure that when they are NOT clickable, it's
+        //quite obvious
+        pointer-events: inherit;
+    }
+}
+
+// Popovers
+// --------------------------------------------------
+th .popover-content {
+    //don't inherit bold font from header cells
+    font-weight: normal;
+}
+
+
+// Forms
+// --------------------------------------------------
+.input-group-addon {
+    > input[type="radio"], > input[type="checkbox"] {
+        vertical-align: middle;
+    }
+}
+
+// BS3 doesn't change the size of labels and spacing between inputs in proportion to the size of the input (input-sm).
+// Note: BS3.2 introduced the 'form-group-sm' class; although it is meant for horizontal forms, it should really
+// apply to all input groups as it is quite legitimate to add input-sm to a vertical form input
+.form-group.form-group-sm {
+    margin-bottom: 9px;
+    .control-label {
+        font-size: @font-size-small;
+    }
+    .form-control-static {
+        font-size: @font-size-small;
+        padding-left: (@padding-small-horizontal + 1);
+        // +0.5 is to satisfy chrome so that the label text appears in the same position as the text inside an input
+        padding-bottom: (@padding-small-vertical + 1 + 0.5);
+        padding-top: (@padding-small-vertical + 1 + 0.5);
+    }
+    .help-block {
+        font-size: @font-size-small;
+    }
+}
+
+
+// Tables
+// --------------------------------------------------
+.table > thead {
+    .radio-inline, .checkbox-inline {
+        font-weight: bold;
+    }
+}
+.form-horizontal .table > thead {
+    .radio-inline, .checkbox-inline {
+        padding-top: 0;
+    }
+}
+
+
+// Select2 
+// --------------------------------------------------
+.select2-container.input-sm .select2-choice .select2-arrow b,
+.input-group.input-group-sm .select2-container .select2-choice .select2-arrow b,
+.select2-container.input-sm .select2-choice div b,
+.input-group.input-group-sm .select2-container .select2-choice div b {
+  background-position: 0 -3px;
+}
+.select2-container.input-sm,
+.input-group.input-group-sm .select2-container {
+  padding: 0;
+}
+
+
+/*============================*/
+/* Bootstrap omissions        */
+/*============================*/
+
+// Badge Colors
+// Bootstrap 3.0 removed contexts for badges, we re-introduce them, based on what is done for labels
+.badge-default {
+  .label-variant(@label-default-bg);
+}
+.badge-inverse {
+  .label-variant(@gray-darker);
+}
+
+.badge-primary {
+  .label-variant(@label-primary-bg);
+}
+
+.badge-success {
+  .label-variant(@label-success-bg);
+}
+
+.badge-info {
+  .label-variant(@label-info-bg);
+}
+
+.badge-warning {
+  .label-variant(@label-warning-bg);
+}
+
+.badge-danger {
+  .label-variant(@label-danger-bg);
+}
+
+// No way to specify that an item in a list is disabled
+.list-group  > a.disabled  {
+      color: @nav-disabled-link-color;
+
+      &:hover,
+      &:focus {
+        color: @nav-disabled-link-hover-color;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: not-allowed;
+      }
+    }
+
+
+// Nav Lists (removed from bootstrap 3)
+
+.nav-list {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-list > li > a,
+.nav-list .nav-header {
+  margin-left: -15px;
+  margin-right: -15px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.nav-list > li > a {
+  padding: 3px 15px;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+  background-color: #08c;
+}
+
+.nav-list [class^="glyphicon-"],
+.nav-list [class*=" glyphicon-"] {
+  margin-right: 2px;
+}
+
+.nav-list .divider {
+  *width: 100%;
+  height: 1px;
+  margin: ((1.428571429 / 2) - 1) 1px; // 8px 1px
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #428bca;
+  border-bottom: 1px solid white;
+}
+
+.nav-header {
+  display: block;
+  padding: 3px 15px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.428571429;
+  color: #999;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  text-transform: uppercase;
+}
+// Space them out when they follow another list item (link)
+.nav li + .nav-header {
+  margin-top: 9px;
+}
